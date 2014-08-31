@@ -1,9 +1,4 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
  * JagofJFrame.java
  *
  * Created on 14.01.2014, 21:31:16
@@ -20,8 +15,8 @@ import javax.swing.Timer;
  * @author Markus Gebhardt
  */
 public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid in Zeitschritten zu "evolieren"
-        implements ActionListener {
-
+        implements ActionListener 
+{
     private Jagof jagof;
     Timer timer;
     int delay = 1000;   //Anzeigedauer eines Evolutionsschritts
@@ -31,7 +26,8 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
     /**
      * Creates new form JagofJFrame
      */
-    public JagofJFrame() {
+    public JagofJFrame() 
+    {
         initComponents();
         jagof = new Jagof();
         timer = new Timer(delay, this);
@@ -45,7 +41,6 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         surviveBox0 = new javax.swing.JCheckBox();
         surviveBox1 = new javax.swing.JCheckBox();
         surviveBox2 = new javax.swing.JCheckBox();
@@ -70,11 +65,8 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         surviveBox0.setText("0 Nachbarn");
-
         surviveBox1.setText("1 Nachbar");
         surviveBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -257,19 +249,8 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void surviveBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surviveBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_surviveBox4ActionPerformed
-
-    private void birthBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birthBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_birthBox4ActionPerformed
-
-    private void surviveBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surviveBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_surviveBox1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) 
+    {
         survivecount[0] = surviveBox0.isSelected() ? 1 : 0;
         survivecount[1] = surviveBox1.isSelected() ? 1 : 0;
         survivecount[2] = surviveBox2.isSelected() ? 1 : 0;
@@ -293,10 +274,9 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
         jTextArea1.setText(null);
         jagof.grid.fillgrid();
         jagof.grid.printgrid(jTextArea1);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         if ( timer.isRunning() ) 
         { 
             timer.stop(); 
@@ -305,7 +285,7 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
         {
             timer.start(); 
         }  //damit das Pausieren in einer Multithreadumgebung möglich ist, werden die Simulationen über Timer gestartet
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -319,14 +299,12 @@ public class JagofJFrame extends javax.swing.JFrame //ActionListener um das grid
         });
     }
 
-    public void actionPerformed(ActionEvent e) { //Der Timer führt diese Methode solange aus, bis der Befehl timer.stop() ausgeführt wird.
-
+    public void actionPerformed(ActionEvent e) 
+    { //Der Timer führt diese Methode solange aus, bis der Befehl timer.stop() ausgeführt wird.
         jagof.grid.printgrid(jTextArea1);
         jagof.grid.evolvegrid(survivecount, borncount);
-
-
-
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox birthBox0;
     private javax.swing.JCheckBox birthBox1;
